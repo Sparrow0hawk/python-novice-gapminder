@@ -93,14 +93,20 @@ primes has become: [2, 3, 5, 7, 9]
     *   Deliberately resembles the way we refer to things in a library.
 *   We will meet other methods of lists as we go along.
     *   Use `help(list)` for a preview.
-*   `extend` is similar to `append`, but it allows you to combine two lists.  For example:
+*   `extend` is similar to `append`, but it allows you to combine two lists.  
+    *   Two lists can also be combined using addition assignment `+=`
+
+For example:
 
 ~~~
 teen_primes = [11, 13, 17, 19]
 middle_aged_primes = [37, 41, 43, 47]
+vintage_primes = [57, 58, 59, 60]
 print('primes is currently:', primes)
 primes.extend(teen_primes)
 print('primes has now become:', primes)
+primes += vintage_primes
+print('primes has changed to:', primes)
 primes.append(middle_aged_primes)
 print('primes has finally become:', primes)
 ~~~
@@ -108,7 +114,8 @@ print('primes has finally become:', primes)
 ~~~
 primes is currently: [2, 3, 5, 7, 9]
 primes has now become: [2, 3, 5, 7, 9, 11, 13, 17, 19]
-primes has finally become: [2, 3, 5, 7, 9, 11, 13, 17, 19, [37, 41, 43, 47]]
+primes has changed to: [2, 3, 5, 7, 9, 11, 13, 17, 19, 57, 58, 59, 60]
+primes has finally become: [2, 3, 5, 7, 9, 11, 13, 17, 19, 57, 58, 59, 60, [37, 41, 43, 47]]
 ~~~
 {: .output}
 
@@ -346,7 +353,7 @@ IndexError: string index out of range
 > > ## Solution
 > > ~~~
 > > lithium
-> > 
+> >
 > > ~~~
 > > {: .language-python}
 > {: .solution}
@@ -425,7 +432,7 @@ IndexError: string index out of range
 > > {: .language-python}
 > > `new = old` makes `new` a reference to the list `old`; `new` and `old` point
 > > towards the same object.
-> > 
+> >
 > > `new = old[:]` however creates a new list object `new` containing all elements
 > > from the list `old`; `new` and `old` are different objects.
 > {: .solution}
